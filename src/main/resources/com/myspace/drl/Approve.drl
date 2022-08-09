@@ -1,0 +1,15 @@
+package com.myspace.drl;
+
+import com.myspace.drl.Applicant
+import java.util.List
+
+
+
+rule "list"
+when
+    $listOfUsers: List()
+    $a: Applicant(age > 30 , approved==false) from $listOfUsers
+then
+    $a.setApproved(true);
+end
+
